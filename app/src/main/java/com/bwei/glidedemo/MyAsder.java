@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 /**
@@ -36,9 +34,7 @@ public class MyAsder extends RecyclerView.Adapter<MyAsder.MyViewHolder>{
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.text.setText(namelist.get(position).getTitle());
-        Glide.with(context)
-                .load(namelist.get(position).getUserImg())
-                .into(holder.imageview);
+        Glideimageutils.Imagelode(context,namelist.get(position).getImg(),holder.imageview);
     }
 
     @Override
